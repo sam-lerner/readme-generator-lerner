@@ -2,49 +2,50 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
+const path = require('path')
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: "input",
-        name: "projectTitle",
+        name: "title",
         message: "What is your project title?",
 
     },
     {
         type: "input",
-        name: "projectDescription",
+        name: "description",
         message: "Please enter a brief project description:",
     },
     {
         type: "input",
-        name: "projectInstall",
+        name: "install",
         message: "Please enter in any necessary instructions for installation:",
     },
     {
         type: "input",
-        name: "projectUseage",
+        name: "useage",
         message: "Please enter in information on useage:",
     },
     {
         type: "input",
-        name: "projectContributions",
+        name: "contributions",
         message: "Please enter in information on contributions:",
 
     },
     {
         type: "input",
-        name: "projectTest",
+        name: "test",
         message: "Please enter in information on tests:",
     },
     {
         type: "list",
-        name: "projectLicense",
+        name: "license",
         message: "Please pick a license option from the list below:",
         choices: [
             "None",
             "Apache",
-            "Boost",
+            "ISC",
             "GNU",
             "Creative Commons",
             "Eclipse",
@@ -54,33 +55,49 @@ const questions = [
         ]
     },
     {
+        type: "list",
+        name: "color",
+        message: "What color should the license badge be?",
+        choices: [
+            "n/a",
+            "brightgreen",
+            "green",
+            "yellowgreen",
+            "yellow",
+            "orange",
+            "red",
+            "blue",
+            "lightgrey",
+        ],
+    },
+    {
         type: "input",
-        name: "userName",
+        name: "username",
         message: "What is your Githup username?",
     },
     {
         type: "input",
-        name: "eMail",
+        name: "email",
         message: "What is your e-mail address?",
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeToFile('./generatedreadme.md', data, err => {
-        if (err) {
-            return console.log(err)
-        }
-        console.log("Success! Your README has been generated.")
-    })
-}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then((inquirerResponse, data) => {
             console.log(inquirerResponse);
+            // const fileName = path.join('./output/README.md');
+            const fileName = path.join(__dirname, "output", "README.MD");
+            // TODO: Create a function to write README file
+            // function writeToFile(fileName, data) {
 
+            fs.writeFile(fileName, generateMarkdown(inquirerResponse), (err) => {
+                err ? console.log(err)
+                    : console.log("Success! Your README has been generated.")
+            })
+            // }
         })
         .catch((err) => {
             console.log(err);
