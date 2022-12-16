@@ -83,12 +83,12 @@ const questions = [
 
 // TODO: Create a function to initialize app
 function init() {
+    
     inquirer.prompt(questions)
         .then((inquirerResponse, data) => {
             console.log(inquirerResponse);
 
-            const fileName = path.join(__dirname, "output", "README.MD");
-
+            const fileName = path.join(__dirname, "output", README.MD);
             // TODO: Create a function to write README file
             fs.writeFile(fileName, generateMarkdown(inquirerResponse), (err) => {
                 err ? console.log(err)
