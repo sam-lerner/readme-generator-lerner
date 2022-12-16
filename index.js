@@ -47,11 +47,9 @@ const questions = [
             "Apache",
             "ISC",
             "GNU",
-            "Creative Commons",
             "Eclipse",
             "MIT",
             "Mozilla",
-            "The Unlicense",
         ]
     },
     {
@@ -73,7 +71,7 @@ const questions = [
     {
         type: "input",
         name: "username",
-        message: "What is your Githup username?",
+        message: "What is your Github username?",
     },
     {
         type: "input",
@@ -88,16 +86,14 @@ function init() {
     inquirer.prompt(questions)
         .then((inquirerResponse, data) => {
             console.log(inquirerResponse);
-            // const fileName = path.join('./output/README.md');
-            const fileName = path.join(__dirname, "output", "README.MD");
-            // TODO: Create a function to write README file
-            // function writeToFile(fileName, data) {
 
+            const fileName = path.join(__dirname, "output", "README.MD");
+
+            // TODO: Create a function to write README file
             fs.writeFile(fileName, generateMarkdown(inquirerResponse), (err) => {
                 err ? console.log(err)
                     : console.log("Success! Your README has been generated.")
             })
-            // }
         })
         .catch((err) => {
             console.log(err);

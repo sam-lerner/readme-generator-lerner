@@ -1,6 +1,6 @@
 
 
-  # README Generator
+  # Project title
 
   [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
   
@@ -17,29 +17,30 @@
 
 ## Description
 
-This project is designed to help the user automatically generate a professional README for their repos.
+This is my description.
 
 ## Installation
 
-n/a
+To install, follow these instructions!
 
 ## Usage
 
-To use, simply open index.js in the integrated terminal window by typing 'node index' and hitting enter. You will then be taken through a series of prompts. At the end, your README will generate in the 'output' folder.
+To use, follow these instructions!
 
 ## Contributions
 
-Thank you to everyone involved in making this.
+Thank you to everyone involved.
 
 ## Tests
 
 n/a
 
 ## License
-MIT
+  This project is licensed under the MIT license.
+    
 
 ## Questions
-See more of my work [here!](https://github.com/sam_lerner) 
+See more of my work [here!](https://github.com/sam-lerner) 
 
 I can be reached via e-mail at sam.a.lerner@gmail.com. Thank you for reading!
 
