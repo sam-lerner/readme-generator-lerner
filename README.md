@@ -23,7 +23,7 @@ This application was designed to allow the user to quickly and easily generate a
 
 In order to use the application, it is necessary to download the repo to your machine. It is possible to quickly do so by using the `git clone` command in a terminal window and pasting in the SSH key provided through Github. 
 
-Make sure that your computer has access to the `node.js` package. Type `npm init -y` into terminal to quickly install and set the default values on the prompts. Once this is complte, you are able to install the package dependencies: `inquirer`, `fs` and `path`. One at a time, install by typing `npm i [package name]`.
+Make sure that your computer has access to the `node.js` package. Type `npm init -y` into terminal to quickly install and set the default values on the prompts. Once this is complte, you are able to install the package dependencies: `inquirer`, `fs` and `path`. One at a time, install by typing `npm i [package name]`. Please note that this application was designed for use with `inquirer` version 8.2.4. To install this specific version, run `npm i inquirer@8.2.4`. Smooth operation cannot be guaranteed with higher versions of `inquirer`.
 
 ## Usage
 
